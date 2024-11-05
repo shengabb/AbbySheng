@@ -1,0 +1,106 @@
+---
+title: "Abby Sheng"
+pagetitle: "Abby Sheng"
+# subtitle: "Political Economy/Causal Inference/Game Theory"
+image: assets/abby/avatar.png
+image-alt: "My avatar"
+twitter-card:
+    title:  Abby Sheng
+    description: |
+      I am a dedicated first-year Master of Environmental Studies student at UPenn with a passion for integrating economic principles into environmental solutions. Joining the Water Center team as an Environmental Economist, I am excited to contribute to the centre’s research and initiatives focused on environmental and economic analysis. With a strong background in economics from LSE and international experience from both Beijing and London, I bring valuable insights into economic modelling and analysis. Outside of academics, I enjoy hiking and loves nature.
+    image: assets/silvia/img/dianyi-social.png
+
+about:
+  template: solana
+  image-width: 28em
+  id: hero-heading
+  # links:
+  #   - icon: linkedin
+  #     aria-label: LinkedIn
+  #     href: https://www.linkedin.com/in/abby-s-274552207/
+    # - icon: github
+    #   aria-label: GitHub
+    #   href: https://github.com/kv9898
+      
+page-layout: full
+
+execute: 
+  freeze: false
+  echo: false
+  warning: false
+
+comments: false
+
+header-includes: >
+  <link rel="stylesheet" href="assets/index.css">
+include-in-header: 
+  - assets/abby/json-ld.html
+resources:
+  - assets/index.css
+---
+
+<br><br>
+
+
+::: {#hero-heading}
+
+I am a dedicated first-year Master of Environmental Studies student at UPenn with a passion for integrating economic principles into environmental solutions. Joining the Water Center team as an Environmental Economist, I am excited to contribute to the centre’s research and initiatives focused on environmental and economic analysis. With a strong background in economics from LSE and international experience from both Beijing and London, I bring valuable insights into economic modelling and analysis. Outside of academics, I enjoy hiking and loves nature.
+
+<!-- [READ MORE &rarr;](/about){.about-links .subtitle} -->
+
+:::
+<!-- hero-heading -->
+
+```{r import-manual-redirects}
+
+manual_redirects <-
+  readr::read_table(here::here("static", "_manualredirects.txt"),
+                    col_names = FALSE) |> 
+  dplyr::mutate(redirect = paste0(X1, " ", X2, " ", X3))
+
+manual_redirects <- manual_redirects$redirect
+```
+
+```{r write-redirects}
+
+# adapted from Tom Mock: https://github.com/jthomasmock/themockup-blog/blob/master/index.qmd#L27C1-L48C4
+# who adapted from Danielle Navarro: https://blog.djnavarro.net/porting-to-quarto/#netlify-redirects
+
+# function: obtain list of posts
+list_files <- function(folder) {
+  posts <-
+    list.dirs(
+    path = c(here::here(folder)),
+    full.names = FALSE,
+    recursive = FALSE
+    ) |> 
+    tibble::as_tibble_col(column_name = "file")  |>
+    dplyr::mutate(folder = folder)
+}
+
+# define post folders
+folders <- c("blog", "project", "publication", "talk")
+
+# list posts by folder
+posts <- purrr::map(folders, list_files) |> purrr::list_rbind()
+
+# extract slugs and create redirects
+posts <- 
+  posts |> 
+  dplyr::mutate(
+    # extract the year-slugs
+    # slugs = stringr::str_remove(file, "(?!\\d{4}-)\\d{2}-\\d{2}-(?!\\d)"),
+    slugs = stringr::str_remove(file, "\\d{4}-\\d{2}-\\d{2}-(?!\\d)"),
+    # lines to insert to a netlify _redirect file
+    redirects = paste0("/", slugs, " ", "/", folder, "/", file)
+    )
+
+# extract redirects
+redirects <- posts$redirects
+
+# combine with manual redirects
+redirects_combined <- c(manual_redirects, redirects)
+
+# write the _redirect file
+writeLines(redirects_combined, here::here("_site", "_redirects"))
+```

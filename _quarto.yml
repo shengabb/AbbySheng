@@ -1,0 +1,92 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "*.ipynb"
+    - "*.Rmd"
+    - "!*.md"
+  resources: 
+  - "assets"
+  #post-render: 
+    #- "cp -rnv static/. _site" # source: https://github.com/quarto-dev/quarto-cli/discussions/4162#discussioncomment-4831352
+
+website:
+  title: "Abby Sheng"
+  site-url: https://abbysheng.netlify.com
+  favicon: "assets/abby/astrology.ico"
+  description: "Political Economy/Causal Inference/Game Theory."
+  google-analytics: "G-J9JHQ6RJV3"
+  comments: 
+    giscus:
+      repo: kv9898/website
+      repo-id: R_kgDOMx274g
+      category: general
+      category-id: DIC_kwDOMx274s4Ciftj
+      mapping: title
+      reactions-enabled: true
+      theme:
+        light: light
+        dark: dark_dimmed
+      language: en
+  navbar:
+    logo: assets/abby/astrology.png
+    tools:
+    #- icon: github
+    #  href: https://www.github.com/kv9898/website
+    # right:
+      # - text: About
+      #   aria-label: "About Me"
+      #   href: about/index.qmd
+      # - text: Blog
+      #   aria-label: "My Blogs"
+      #   href: blog/index.qmd
+      #- text: Talks
+      #  aria-label: "Invited Talks"
+      #  href: talk/index.qmd  
+      # - text: Papers
+      #   aria-label: "Papers"
+      #   href: papers/index.qmd
+      # - text: Tools
+      #   aria-label: "Tools"
+      #   href: tool/index.qmd
+      # - text: CV
+      #   aria-label: "CV"
+      #   href: cv/CV_Dianyi.pdf
+      #- text: Projects
+      #  aria-label: "Project Portfolio"
+      #  href: project/index.qmd
+
+  # repo-url: https://github.com/kv9898/website
+  # repo-actions: [source, issue]
+
+  page-footer:  
+    left: >-
+     &#169; 2024 Abby Sheng  &#8729; Made with [Quarto](https://quarto.org).<br>Based on [Dianyi Yang's](https://rubuky.com/) template.<br><a href="https://www.flaticon.com/free-icons/saggitarius" title="saggitarius icons">Saggitarius icons created by pocike - Flaticon</a>
+    center: |
+      <a class="link-dark me-1" href="https://www.linkedin.com/in/abby-s-274552207/" title="LinkedIn" target="_blank" rel="noopener">{{< bi linkedin >}}</a>
+    right: 
+      - text: License
+        aria-label: "License Details"
+        href: license.qmd
+      # - text: Contact
+      #   aria-label: "Contact Form"
+      #   href: "contact.qmd"
+      
+
+execute: 
+  freeze: auto
+
+format: 
+  html:
+    theme:
+      light:
+        - cosmo
+        - assets/dianyi/dianyi-theme-light.scss
+        - assets/dianyi/colors-light.scss
+      dark:
+        - cosmo
+        - assets/dianyi/dianyi-theme-dark.scss
+        - assets/dianyi/colors-dark.scss
+    highlight-style: a11y
+    include-before-body: 
+      - assets/dianyi/load_theme.js
