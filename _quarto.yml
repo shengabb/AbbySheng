@@ -12,7 +12,7 @@ project:
 
 website:
   title: "Abby Sheng"
-  site-url: https://abbysheng.netlify.com
+  site-url: https://abbysheng.netlify.app
   favicon: "assets/abby/astrology.ico"
   description: "Political Economy/Causal Inference/Game Theory."
   google-analytics: "G-J9JHQ6RJV3"
