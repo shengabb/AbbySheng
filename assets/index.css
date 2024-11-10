@@ -101,6 +101,7 @@
     /* move image up, adjust padding */
     .about-image {
       order: 1 !important;
+      margin-top: 2em;
       padding: 0 2em 0 2em !important;
     }
 }
