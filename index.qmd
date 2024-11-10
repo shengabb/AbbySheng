@@ -7,7 +7,7 @@ image-alt: "My avatar"
 twitter-card:
     title:  Abby Sheng
     description: |
-      I am a dedicated first-year Master of Environmental Studies student at UPenn with a passion for integrating economic principles into environmental solutions. Joining the Water Center team as an Environmental Economist, I am excited to contribute to the centre’s research and initiatives focused on environmental and economic analysis. With a strong background in economics from LSE and international experience from both Beijing and London, I bring valuable insights into economic modelling and analysis. Outside of academics, I enjoy hiking and loves nature.
+      I'm a first-year Master of Environmental Studies student at UPenn and a recent BSc. graduate in Economics from LSE. Growing up in both China and the UK, I bring an international perspective to my work. Currently, I’m the Environmental Economics Graduate Research Fellow at the Water Center at UPenn, where I combine my passion for data analysis with a focus on ESG metrics and ROI analysis in infrastructure projects. 
     image: assets/silvia/img/dianyi-social.png
 
 about:
@@ -44,7 +44,7 @@ resources:
 
 ::: {#hero-heading}
 
-I am a dedicated first-year Master of Environmental Studies student at UPenn with a passion for integrating economic principles into environmental solutions. Joining the Water Center team as an Environmental Economist, I am excited to contribute to the centre’s research and initiatives focused on environmental and economic analysis. With a strong background in economics from LSE and international experience from both Beijing and London, I bring valuable insights into economic modelling and analysis. Outside of academics, I enjoy hiking and loves nature.
+I'm a first-year Master of Environmental Studies student at UPenn and a recent BSc. graduate in Economics from LSE. Growing up in both China and the UK, I bring an international perspective to my work. Currently, I’m the Environmental Economics Graduate Research Fellow at the Water Center at UPenn, where I combine my passion for data analysis with a focus on ESG metrics and ROI analysis in infrastructure projects. 
 
 <!-- [READ MORE &rarr;](/about){.about-links .subtitle} -->
 

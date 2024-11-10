@@ -88,5 +88,5 @@ format:
         - assets/dianyi/dianyi-theme-dark.scss
         - assets/dianyi/colors-dark.scss
     highlight-style: a11y
-    include-before-body: 
-      - assets/dianyi/load_theme.js
+    # include-before-body: 
+    #   - assets/dianyi/load_theme.js
